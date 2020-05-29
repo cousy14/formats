@@ -9,7 +9,7 @@ with open('newsafr.json', encoding='utf-8') as f:
     description_text = item['description'].strip().split(' ')
     for words in description_text:
       if len(words) >= 6:
-        new_list.append(words)
+        new_list.append(words.lower())
   new_dict = Counter(new_list)
   words_top = list(reversed(sorted(new_dict.values())))[:10]      
   for key, value in new_dict.items():
